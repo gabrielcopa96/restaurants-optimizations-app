@@ -4,8 +4,8 @@ const App = () => {
 
   return (
     <div >
-      {/* <SignUp/>
-      <SignIn/> */}
+      <SignUp/>
+      <SignIn/>
     </div>
   )
 }
