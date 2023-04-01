@@ -1,0 +1,74 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+.containerAccount{
+    height: 60rem;
+    width: 60%;
+    margin: 14rem auto 0 auto;
+    background-color: v.$grisBlack;
+
+    @include m.grid(2,0.5px);
+    @include m.tablet{
+        width: 100%; 
+    }
+    @include m.desktop{
+        width: 100%;
+    }
+    @include m.phone{
+        display: flex;
+        flex-direction: column;
+        width: 99%;
+        height: 75vh;
+        margin: auto;
+    }
+    .logo{
+        background-color: v.$white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .infoUser{
+        background-color: v.$grisBlack;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        input{
+            background-color: v.$grisInput;
+            border: none;
+            height: 2rem;
+            padding: 2rem;
+            width: 50%;
+        }
+        .button{
+            padding: 0;
+            background-color: v.$redTurques;
+            color:v.$white;
+            height: 4.4rem;
+            text-align: center;
+            font-weight: v.$bold;
+            margin-top: 2rem;
+            cursor: pointer;
+            &:hover{
+                background-color: v.$redHover;
+                transition: 1.4s all;
+            }
+        }
+        .link{
+            margin-top: 1.6rem;
+            color: #C8C8C8;
+            text-decoration:underline;
+        }
+        .password{
+            font-size: 1.2rem;
+            color:#777777;
+        }
+        .informaty{
+            font-size: 1.6rem;
+            color: #C8C8C8;
+        }
+        .resalt{
+            color: #CF5555;
+        }
+    }
+}

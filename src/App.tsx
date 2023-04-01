@@ -1,9 +1,13 @@
-
+import SignUp from "./components/autentication/SignUp";
+import SignIn from "./components/autentication/SignIn";
+import Access from "./views/view-access/Access";
 const App = () => {
 
   return (
     <div >
-      <h2>Bienvenidos</h2>
+      <Access />
+      {/* <SignUp/>
+      <SignIn/> */}
     </div>
   )
 }
