@@ -5,11 +5,11 @@ import SignIn from "./components/autentication/SignIn";
 import Authguards from './Guardian/Auth.guards';
 import RoutesWithbotFound from './utils/RoutesWithbotFound';
 import Private from './Page/Private/Private';
+
 const App = () => {
 
   return (
     <div >
-
       <HashRouter>
           <RoutesWithbotFound>
             <Route path='/' element={<Navigate to={PrivateRoutes.PRIVATE}/>}/>
@@ -20,7 +20,6 @@ const App = () => {
             </Route>
           </RoutesWithbotFound>
       </HashRouter>
-
     </div>
   )
 }

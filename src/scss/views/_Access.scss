@@ -1,0 +1,26 @@
+@use '../base/variables' as v;
+
+.access__header {
+   background: v.$white;
+   padding: 8px;
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   
+   & h3 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: v.$grisBlack;
+   }
+
+}
+
+.container__content {
+   padding: 24px;
+
+   .first__box__content {
+      display: flex;
+      padding: 5px;
+      justify-content: space-between;
+   }
+}
