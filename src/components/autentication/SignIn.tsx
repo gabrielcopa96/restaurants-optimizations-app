@@ -1,4 +1,6 @@
 import logo from '../../assets/logo.svg';
+import { Link } from "react-router-dom";
+import { PublicRoutes } from "../../routes/routes";
 export default function SignIn() {
   return (
     <div className="containerAccount">
@@ -11,7 +13,7 @@ export default function SignIn() {
             <input type="password" placeholder=' Escriba una Contraseña' /> 
             <input className='button' type="submit" value="CREAR CUENTA" />
             <a className='link password'>Olvide mi contraseña</a>
-            <p className='informaty'>Aun no tienes una cuenta? <span className='resalt'>Crear Cuenta</span></p>
+            <p className='informaty'>Aun no tienes una cuenta? <Link to={"/"+PublicRoutes.SIGNUP}><span className='resalt'>Crear Cuenta</span></Link></p>
         </div>
     </div>
   )
