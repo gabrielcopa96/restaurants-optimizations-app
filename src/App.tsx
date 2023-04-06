@@ -9,7 +9,7 @@ import AlertAuth from './components/alerts/AlertAuth';
 const App = () => {
 
   return (
-    <div >
+    <div>
       <AlertAuth/>
       <HashRouter>
           <RoutesWithbotFound>

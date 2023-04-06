@@ -6,6 +6,6 @@ export const Post = async(body:body, https:string):Promise< [string, string[]] |
         console.log(response);
         return response.data;
     } catch (error:any) {
-        return error.message;
+        return error.response.data;
     }
 }
