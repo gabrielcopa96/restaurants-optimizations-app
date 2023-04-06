@@ -2,10 +2,10 @@ import logo from '../../assets/logo.svg';
 import { Link } from "react-router-dom";
 import {useRegisterSend} from '../../costoomHooks/useRegisterSend';
 import {PublicRoutes} from "../../routes/routes";
-
+import {USER_SIGNUP} from '../../HTTPS/HTTPS';
 
 export default function SignUp():JSX.Element {
-// este hoock te permite registrar los valores de los inputs enviar los datos y detectar errores para esto hay que pasarle un objecto con los campos que deseas guardar sus valores
+// este hoock te permite registrar los valores de los inputs enviar los datos y detectar errores para esto hay que pasarle un objecto con los campos que deseas guardar sus valores y un string a la direeccion HTTPS que se va a hacer la peticion
 //inputBlur lo que hace es detectar si perdiste el enfoque del input para usar esto crearemos una propiedad onBlur en input y colocaremos la funcion inputBlur
 //touch lo que hace es dectectar si hiciste click en el formulario por ende va a detectar que estas en el input
 //error es un objecto que va a contener errores en caso de que alla
@@ -18,7 +18,9 @@ const {error,inputBlur,inputChange,touch,values,submit} = useRegisterSend({
   email:'',
   password:'',
   password2:''
-});
+},
+USER_SIGNUP
+);
   return (
     <div className="containerAccount">
         <div className="logo">

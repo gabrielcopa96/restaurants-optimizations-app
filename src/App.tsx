@@ -5,11 +5,12 @@ import SignIn from "./components/autentication/SignIn";
 import Authguards from './Guardian/Auth.guards';
 import RoutesWithbotFound from './utils/RoutesWithbotFound';
 import Private from './Page/Private/Private';
-
+import AlertAuth from './components/alerts/AlertAuth';
 const App = () => {
 
   return (
     <div >
+      <AlertAuth/>
       <HashRouter>
           <RoutesWithbotFound>
             <Route path='/' element={<Navigate to={PrivateRoutes.PRIVATE}/>}/>
