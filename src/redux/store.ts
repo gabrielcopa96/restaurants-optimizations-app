@@ -1,10 +1,16 @@
 import { configureStore } from '@reduxjs/toolkit';
 import userSlice from './states/user';
 import alertAuthSlice from './states/alertAuth';
+type user={
+    id?: string,
+    username?: string,
+    phone?: string,
+    email?:string,
+    password?: string
+}
 interface UserInfo {
-    id: number,
-    name: string,
-    email:string
+    user:user
+    token: string,
 }
 interface AlertAuth {
     render: boolean,

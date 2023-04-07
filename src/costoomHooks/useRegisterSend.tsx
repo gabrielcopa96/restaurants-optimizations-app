@@ -1,11 +1,9 @@
-import { useNavigate } from 'react-router-dom'
 import { useFormik } from 'formik';
 import { Post } from '../utils/Post';
-import alertAuth, { setearAlertRender } from '../redux/states/alertAuth';
+import { setearAlertRender } from '../redux/states/alertAuth';
+import { createUser } from '../redux/states/user'
 import { useDispatch } from 'react-redux';
-import { PublicRoutes } from '../routes/routes';
-import { AppStore } from '../redux/store';
-import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 interface BodyInitialValues {
   [key: string]: string | undefined;
   username?: string;
@@ -55,7 +53,6 @@ const validate = (values:BodyInitialValues)=>{
   }
   export  function useRegisterSend(body:BodyInitialValues,HTTP_direction:string):UseRegisterSend {
     const dispatch = useDispatch();   
-    const altertAuth = useSelector((state:AppStore)=>state.alertAuth)
     const navigate = useNavigate();
     const formik = useFormik({
       initialValues: body,
@@ -63,8 +60,18 @@ const validate = (values:BodyInitialValues)=>{
       onSubmit: async(values:BodyInitialValues):Promise<void> => {
         // alert(JSON.stringify(values, null, 2));
         try {
-          const response = await Post(values,HTTP_direction);
-          await dispatch(setearAlertRender(response))
+          let response = await Post(values,HTTP_direction);
+
+          if(!Array.isArray(response) && response !== undefined){
+            const {user, token , alert} = response
+            dispatch(createUser({  token,user }))           
+            response = alert
+            setTimeout(()=>{
+              navigate("/")
+            },4000)
+          }
+          dispatch(setearAlertRender(response))
+           
           for(let props in values){
             values[props] = ""
           }

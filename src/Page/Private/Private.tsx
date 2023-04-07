@@ -3,6 +3,7 @@ import {PrivateRoutes} from "../../routes/routes"
 import RoutesWithbotFound from "../../utils/RoutesWithbotFound";
 import Home from "../../components/Home";
 import Admin from "../../components/Admin";
+
 export default function Private() {
   return (
     <RoutesWithbotFound>

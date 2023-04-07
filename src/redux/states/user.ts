@@ -1,18 +1,25 @@
 import { createSlice } from "@reduxjs/toolkit";
+import store from "../store";
 
+type user={
+    id?: string,
+    username?: string,
+    phone?: string,
+    email?:string,
+    password?: string
+}
 interface UserInfo {
-    id: number,
-    name: string,
-    email:string
+    user:user
+    token: string,
 }
 
 export const EmptyUserState:UserInfo ={
-    id:0,
-    name: "",
-    email:""
+    user:{},
+    token:""
+
 }
 export const persistLocalStorageUser= (userInfo:any)=>{
-    localStorage.setItem('user',JSON.stringify({...userInfo}));
+   localStorage.setItem('user',JSON.stringify({...userInfo}));
 }
 
 export const clearLocalStorage = ()=>{
@@ -25,6 +32,9 @@ initialState: localStorage.getItem('user') ? JSON.parse(localStorage.getItem('us
 reducers:{
     createUser: (state, action)=>{
         persistLocalStorageUser(action.payload);
+        const localStorageGet = JSON.parse(localStorage.getItem('user') as string)
+        state.token = localStorageGet.token
+        state.user = localStorageGet.user
     },
     updateUser: (state, action)=>{
         const result = {...state, ...action.payload}

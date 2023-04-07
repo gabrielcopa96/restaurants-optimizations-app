@@ -1,0 +1,61 @@
+.ContainerPage{
+    background-image: url(https://wallpaperstock.net/wallpapers/thumbs1/55315hd.jpg);
+    width: 100%;
+    height: 100vh;
+    .ContainerLogo{
+        img{
+            width: 10rem;
+        }
+    }
+    .ContainerImg{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10rem;
+        h3{
+            z-index: 1;
+            text-shadow: 2px 2px rgb(255, 96, 3);
+        }
+        .luna{
+            width: 30rem;
+            height: 30rem;
+            border-radius: 50%;
+            background-image: url(https://img2.freepng.es/20180319/ykw/kisspng-earth-supermoon-lunar-phase-moon-png-no-background-5ab035c9dc6088.6390594215214975459027.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            -webkit-box-shadow: 0px 3px 140px 18px rgba(255,255,255,1);
+            -moz-box-shadow: 0px 3px 140px 18px rgba(255,255,255,1);
+            box-shadow: 0px 3px 140px 18px rgba(255,255,255,1);
+            margin-top: 2rem;
+            animation:  palpitacion 10s ease-out infinite;
+            z-index: 3;
+            &::after{
+                content: "";
+                width: 30rem;
+                height: 30rem;
+                background-color: red;
+                position: absolute;
+                border-radius: 50% ;
+                background-color: rgba(255, 255, 255, 0.5); /* Establece un color de fondo con transparencia */
+                backdrop-filter: blur(1px); /* Aplica un filtro de desenfoque al color de fondo */
+            }
+        }
+     
+          @keyframes palpitacion {
+            0% {
+              transform: scale(1);
+              transform: translateY(-200%);
+
+            }
+            50% {
+              transform: scale(1.9);
+            }
+            100% {
+              transform: scale(1);
+              transform: translateX(-400%);
+            }
+          }
+    }
+}
