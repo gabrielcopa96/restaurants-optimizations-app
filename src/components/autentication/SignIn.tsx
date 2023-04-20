@@ -23,7 +23,7 @@ export default function SignIn() {
             <input name='password' type="password" placeholder=' Escriba una Contraseña' value={values.password} onChange={inputChange} onBlur={inputBlur} /> 
             {touch.password && error.password ? <p className='error'>{error.password}</p>:null}
             <input className='button' type="submit" value="CREAR CUENTA"/>
-            <a className='link password'>Olvide mi contraseña</a>
+            <Link to={`/${PublicRoutes.FORGOTPASSWORD}`}><a className='link password'>Olvide mi contraseña</a></Link>
             <p className='informaty'>Aun no tienes una cuenta? <Link to={"/"+PublicRoutes.SIGNUP}><span className='resalt'>Crear Cuenta</span></Link></p>
         </div>
     </form>

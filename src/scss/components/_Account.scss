@@ -42,6 +42,9 @@
         justify-content: center;
         align-items: center;
         gap: 1.5rem;
+        h2{
+            font-size: 2.4rem;
+        }
         input{
             background-color: v.$grisInput;
             border: none;
@@ -90,5 +93,42 @@
                 color: #eb5555; ;
             }
         }
+    }
+    .container_send{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        gap: 2rem;
+        input{
+            width: 12rem;
+            margin: 0;
+            margin-bottom: 1rem;
+        }
+        span{
+            color: #C14A4A;
+        }
+        @include m.tablet{
+            flex-direction: column; 
+            gap: 1.4rem;
+            input{
+                width: 50%;
+            }
+        }
+        @include m.desktop{
+            flex-direction: column;
+            gap: 1.4rem;
+            input{
+                width: 50%;
+            }
+        }
+        @include m.phone{
+            flex-direction: column;
+            gap: 1.4rem;
+            input{
+                width: 50%;
+            }
+        }
+
     }
 }
