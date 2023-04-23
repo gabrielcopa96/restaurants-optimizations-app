@@ -15,8 +15,8 @@ export default function AlertAuth() {
             },4000)  
         }
     },[alertAuth.render])
+ 
   return  alertAuth.render ? (
-
     <div className='containerFather'>
         <div className="containerCard">
             <div className='containerLogo'>

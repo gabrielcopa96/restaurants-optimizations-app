@@ -3,7 +3,7 @@ import {PrivateRoutes, PublicRoutes} from './routes/routes'
 import SignUp from "./components/autentication/SignUp";
 import SignIn from "./components/autentication/SignIn";
 import Authguards from './Guardian/Auth.guards';
-import ConfirmPassword from './Page/Public/confirmPassword';
+import ConfirmPassword from './Page/Public/ConfirmPassword';
 import RoutesWithbotFound from './utils/RoutesWithbotFound';
 import Private from './Page/Private/Private';
 import AlertAuth from './components/alerts/AlertAuth';
@@ -19,7 +19,7 @@ const App = () => {
             <Route path={PublicRoutes.LOGIN} element={<SignIn/>}/>
             <Route path={PublicRoutes.SIGNUP} element={<SignUp/>}/>
             <Route path={PublicRoutes.FORGOTPASSWORD} element={<ForgotMyPassword/>}/>
-            <Route path={PublicRoutes.CONFIRMPASSWORD} element={<ConfirmPassword/>}/>
+            <Route path={`${PublicRoutes.CONFIRMPASSWORD}/:token`} element={<ConfirmPassword/>}/>
             <Route element={<Authguards/>}>
               <Route path={`${PrivateRoutes.PRIVATE}/*`} element={<Private/>}/>
             </Route>

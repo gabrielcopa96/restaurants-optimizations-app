@@ -1,0 +1,25 @@
+.containerLoading{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;   
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 3px solid white;
+    animation: rotates 1s  linear infinite;
+    margin-left:2rem;
+    margin-right:2rem; 
+
+    @keyframes rotates {
+        0%{
+            transform: rotate(0deg);
+        }
+        100%{
+            transform: rotate(360deg);
+        }
+    }
+}
+.title{
+    color: white;
+}
